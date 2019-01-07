@@ -19,7 +19,6 @@ public class PersonMapper {
     public Person createNew (PersonCreateDTO PersonDTO)
     {
         Person person = new Person();
-        person.setIdUser(PersonDTO.getIdUser());
         person.setFirstName(PersonDTO.getFirstName());
         person.setLastName(PersonDTO.getLastName());
         return person;

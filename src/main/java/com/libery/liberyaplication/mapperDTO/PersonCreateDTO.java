@@ -3,7 +3,7 @@ package com.libery.liberyaplication.mapperDTO;
 public class PersonCreateDTO {
 
 
-    private Long idUser;
+
     private String firstName;
     private String lastName;
 
@@ -16,15 +16,9 @@ public class PersonCreateDTO {
     public PersonCreateDTO( ) {
     }
 
-    public Long getIdUser() {
-        return idUser;
-    }
 
-    public void setIdUser(Long idUser) {
-        this.idUser = idUser;
-    }
 
-    public String getFirstName() {
+    String getFirstName() {
         return firstName;
     }
 
@@ -32,7 +26,7 @@ public class PersonCreateDTO {
         this.firstName = firstName;
     }
 
-    public String getLastName() {
+    String getLastName() {
         return lastName;
     }
 
