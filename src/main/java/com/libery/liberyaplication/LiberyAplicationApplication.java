@@ -7,6 +7,7 @@ package com.libery.liberyaplication;
 
 
 import com.libery.liberyaplication.mapperDTO.PersonCreateDTO;
+import com.libery.liberyaplication.services.AutorService;
 import com.libery.liberyaplication.services.BookService;
 import com.libery.liberyaplication.services.BorrowService;
 import com.libery.liberyaplication.services.PersonService;
@@ -23,12 +24,14 @@ public class LiberyAplicationApplication implements CommandLineRunner {
 	private final BookService bookService;
 	private final PersonService personService;
 	private final BorrowService borrowService;
+	private final AutorService autorService;
 
 	@Autowired
-	public LiberyAplicationApplication(BookService bookService, PersonService personService, BorrowService borrowService) {
+	public LiberyAplicationApplication(BookService bookService, PersonService personService, BorrowService borrowService, AutorService autorService) {
 		this.bookService = bookService;
 		this.personService = personService;
 		this.borrowService = borrowService;
+		this.autorService = autorService;
 	}
 
 
@@ -76,9 +79,9 @@ public class LiberyAplicationApplication implements CommandLineRunner {
 		borrowService.rentBook(3L,2L);
 		borrowService.rentBook(3L,2L);
 
-        System.out.println("-------------------------------------");
-		System.out.println("--------------START------------------");
-        System.out.println("-------------------------------------");
+        System.out.println("-------------------------------------------------------------------------------------------------------------------------");
+		System.out.println("--------------------------------------------------------STARTED----------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 	}
 }
 
