@@ -6,6 +6,7 @@ import com.libery.liberyaplication.model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,7 +30,7 @@ public class BookService {
 
     public List<Book> getAllBookServ() {
 
-    return bookRepositiry.findAll().stream().collect(Collectors.toList());
+    return new ArrayList<>(bookRepositiry.findAll());
 
     }
 }

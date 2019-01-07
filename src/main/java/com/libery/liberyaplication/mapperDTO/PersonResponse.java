@@ -2,11 +2,11 @@ package com.libery.liberyaplication.mapperDTO;
 
 public class PersonResponse {
 
-    private Long idUser;
-    private String firstName;
-    private String lastName;
+    private final Long idUser;
+    private final String firstName;
+    private final String lastName;
 
-    public PersonResponse(Long idUser, String firstName, String lastName) {
+    PersonResponse(Long idUser, String firstName, String lastName) {
         this.idUser = idUser;
         this.firstName = firstName;
         this.lastName = lastName;

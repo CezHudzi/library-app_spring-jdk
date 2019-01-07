@@ -3,7 +3,6 @@ package com.libery.liberyaplication.model;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 @Entity
 @Table(name = "borrows")

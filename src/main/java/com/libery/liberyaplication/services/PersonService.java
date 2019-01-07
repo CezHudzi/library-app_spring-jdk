@@ -37,9 +37,7 @@ public class PersonService {
 
     public List<PersonResponse> getAllPersonServ() {
 
-        List<PersonResponse> temp = personRepository.findAll().stream().map(personMapper::cereateResponse).collect(Collectors.toList());
-
-        return temp;
+        return personRepository.findAll().stream().map(personMapper::cereateResponse).collect(Collectors.toList());
 
     }
 }

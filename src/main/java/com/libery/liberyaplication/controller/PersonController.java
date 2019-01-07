@@ -3,7 +3,6 @@ package com.libery.liberyaplication.controller;
 
 import com.libery.liberyaplication.mapperDTO.PersonCreateDTO;
 import com.libery.liberyaplication.mapperDTO.PersonResponse;
-import com.libery.liberyaplication.model.Person;
 import com.libery.liberyaplication.services.PersonService;
 import org.springframework.web.bind.annotation.*;
 

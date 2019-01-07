@@ -6,7 +6,7 @@ import java.util.Set;
 
 
 @Entity
-public class Autor {
+class Autor {
 
 
     @Id

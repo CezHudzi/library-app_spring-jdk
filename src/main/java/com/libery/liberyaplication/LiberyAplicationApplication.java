@@ -11,7 +11,6 @@ import com.libery.liberyaplication.services.BookService;
 import com.libery.liberyaplication.services.BorrowService;
 import com.libery.liberyaplication.services.PersonService;
 import com.libery.liberyaplication.model.Book;
-import com.libery.liberyaplication.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -21,9 +20,9 @@ import org.springframework.transaction.annotation.Transactional;
 @SpringBootApplication
 public class LiberyAplicationApplication implements CommandLineRunner {
 
-	final BookService bookService;
-	final PersonService personService;
-	final BorrowService borrowService;
+	private final BookService bookService;
+	private final PersonService personService;
+	private final BorrowService borrowService;
 
 	@Autowired
 	public LiberyAplicationApplication(BookService bookService, PersonService personService, BorrowService borrowService) {

@@ -7,11 +7,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class BookMapper {
 
-    private BookService bookService;
-
 
     public BookMapper(BookService bookService) {
-        this.bookService = bookService;
+        BookService bookService1 = bookService;
     }
 
 
