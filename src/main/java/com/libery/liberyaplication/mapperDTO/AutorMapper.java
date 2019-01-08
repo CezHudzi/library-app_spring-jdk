@@ -23,7 +23,7 @@ public class AutorMapper {
 
     public AutorResponse autorResponse(Autor autor)
     {
-        return new AutorResponse(autor.getAutorId(),autor.getFirstName(), autor.getLastName(), autor.getBook());
+        return new AutorResponse(autor.getAutorId(),autor.getFirstName(), autor.getLastName());
     }
 
 

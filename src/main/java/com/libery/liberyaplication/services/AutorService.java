@@ -2,10 +2,13 @@ package com.libery.liberyaplication.services;
 
 
 import com.libery.liberyaplication.mapperDTO.*;
+import com.libery.liberyaplication.model.Autor;
+import com.libery.liberyaplication.model.Book;
 import com.libery.liberyaplication.repo.AutorRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 
@@ -27,9 +30,29 @@ public class AutorService {
     }
 
 
+    public Autor getAutorById(Integer autorId)
+    {
+
+        Optional<Autor> autor = autorRepository.findById(autorId.longValue());
+
+    if (autor.isPresent())
+    {
+        return autor.get();
+    }
+    else
+    {
+
+        return new Autor();
+    }
+
+
+    }
+
+
     public List<AutorResponse> getAllAutor() {
 
         return autorRepository.findAll().stream().map(autorMapper::autorResponse).collect(Collectors.toList());
+
 
     }
 

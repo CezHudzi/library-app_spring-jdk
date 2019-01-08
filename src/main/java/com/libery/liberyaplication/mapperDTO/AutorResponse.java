@@ -10,13 +10,13 @@ public class AutorResponse {
     private Long autorId;
     private String firstName;
     private String lastName;
-    private Set<Book> book;
+   // private Set<Book> book;
 
-    public AutorResponse(Long autorId, String firstName, String lastName, Set<Book> book) {
+    public AutorResponse(Long autorId, String firstName, String lastName) {
         this.autorId = autorId;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.book = book;
+    //    this.book = book;
     }
 
     public Long getAutorId() {
@@ -31,7 +31,7 @@ public class AutorResponse {
         return lastName;
     }
 
-    public Set<Book> getBook() {
-        return book;
-    }
+   // public Set<Book> getBook() {
+ //       return book;
+ //   }
 }

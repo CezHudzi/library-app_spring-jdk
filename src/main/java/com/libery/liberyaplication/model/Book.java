@@ -9,19 +9,21 @@ import java.util.Set;
 @Table(name = "books")
 public class Book {
 
-
-
+    public Book(String bookName, Set<Autor> author) {
+        this.bookName = bookName;
+        this.author = author;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idBook;
 
     private String bookName;
-    private String bookAutor;
+
 
     public Book(String bookName, String bookAutor) {
         this.bookName = bookName;
-        this.bookAutor = bookAutor;
+
     }
 
     public Book() {
@@ -59,9 +61,6 @@ public class Book {
         return bookName;
     }
 
-    public String getBookAutor() {
-        return bookAutor;
-    }
 
     public Set<Borrow> getBorrow() {
         return borrow;
@@ -79,5 +78,15 @@ public class Book {
     }
 
 
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
+    }
 
+    public void setBorrow(Set<Borrow> borrow) {
+        this.borrow = borrow;
+    }
+
+    public void setAuthor(Set<Autor> author) {
+        this.author = author;
+    }
 }

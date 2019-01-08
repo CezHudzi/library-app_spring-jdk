@@ -35,9 +35,9 @@ class Autor {
         this.lastName = lastName;
     }
 
-    public Set<Book> getBook() {
-        return book;
-    }
+    //public Set<Book> getBook() {
+   //     return book;
+  //  }
 
     public void setBook(Set<Book> book) {
         this.book = book;

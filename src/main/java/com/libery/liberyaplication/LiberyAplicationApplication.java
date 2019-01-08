@@ -6,6 +6,8 @@ package com.libery.liberyaplication;
 //TODO REMOVE AND SELECT SOMETHING
 
 
+import com.libery.liberyaplication.mapperDTO.AutorCreateDTO;
+import com.libery.liberyaplication.mapperDTO.BookCreateDTO;
 import com.libery.liberyaplication.mapperDTO.PersonCreateDTO;
 import com.libery.liberyaplication.services.AutorService;
 import com.libery.liberyaplication.services.BookService;
@@ -17,6 +19,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @SpringBootApplication
 public class LiberyAplicationApplication implements CommandLineRunner {
@@ -51,11 +56,29 @@ public class LiberyAplicationApplication implements CommandLineRunner {
 	@Override
 	@Transactional
 	public void run(String... args) throws Exception {
-		Book one =  new Book("Qwo Wadis","Henryk Sienkiewicz");
-		Book two =  new Book("Dziady","Adam Mickiewicz");
-		Book three =  new Book("Historia Rzymu","Karwa Dwa");
-		Book four =  new Book("Harry Potter","Jay Rowlling");
-		Book five =  new Book("Pachnidlo","Iwan Grozny");
+
+
+		AutorCreateDTO autorOne = new AutorCreateDTO("Adam", "Mickiewicz");
+		AutorCreateDTO autorTwo = new AutorCreateDTO("Juliusz", "Słowacki");
+		AutorCreateDTO autorThree = new AutorCreateDTO("Sigmunt", "Froud");
+
+		autorService.addAutor(autorOne);
+		autorService.addAutor(autorTwo);
+		autorService.addAutor(autorThree);
+
+		Set<Integer> autorsFirst = new HashSet<Integer>();
+		Set<Integer> autorsSecond = new HashSet<Integer>();
+
+		autorsFirst.add(1);
+		autorsFirst.add(3);
+		autorsSecond.add(2);
+
+
+		BookCreateDTO one =  new BookCreateDTO("DZIADY", autorsFirst);
+		BookCreateDTO two =  new BookCreateDTO("Dziady", autorsFirst);
+		BookCreateDTO three =  new BookCreateDTO("Historia Rzymu", autorsSecond);
+		BookCreateDTO four =  new BookCreateDTO("Harry Potter", autorsSecond);
+		BookCreateDTO five =  new BookCreateDTO("Pachnidlo", autorsFirst);
 
 		bookService.addBook(one);
 		bookService.addBook(two);
@@ -75,9 +98,9 @@ public class LiberyAplicationApplication implements CommandLineRunner {
 		personService.addPerson(fourP);
 		personService.addPerson(fiveP);
 
-		borrowService.rentBook(1L,2L);
-		borrowService.rentBook(3L,2L);
-		borrowService.rentBook(3L,2L);
+		//borrowService.rentBook(1L,2L);
+		//borrowService.rentBook(3L,2L);
+		//borrowService.rentBook(3L,2L);
 
         System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 		System.out.println("--------------------------------------------------------STARTED----------------------------------------------------------");
